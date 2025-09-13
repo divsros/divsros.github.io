@@ -1,54 +1,547 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>YourSite — Fast Bot / Tool</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapleMate — Advanced MapleStory Automation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/maplemate.PNG" />
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(59, 130, 246, 0.85) 50%, rgba(139, 92, 246, 0.85) 100%), 
+                        url('assets/pexels-umkreisel-app-956999.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .luxury-bg {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%), 
+                        url('assets/pexels-umkreisel-app-956999.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .luxury-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .luxury-text {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <header class="bg-white shadow">
-    <div class="max-w-5xl mx-auto p-6 flex justify-between items-center">
-      <div class="text-xl font-bold">YourBrand</div>
-      <nav class="space-x-6 hidden md:block">
-        <a href="#features" class="hover:underline">Features</a>
-        <a href="#pricing" class="hover:underline">Pricing</a>
-        <a href="#faq" class="hover:underline">FAQ</a>
-      </nav>
-    </div>
-  </header>
+<body class="luxury-bg text-gray-900">
+    <!-- Header -->
+    <header class="luxury-card shadow-2xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/maplemate.PNG" alt="MapleMate" class="h-10 w-10 rounded-lg">
+                    <span class="text-2xl font-bold text-gray-900">MapleMate</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+                    <a href="#faq" class="text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="https://discord.gg/HjnRpe3TzF" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                        <span>Discord</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <main class="max-w-5xl mx-auto p-6">
-    <section class="text-center py-16">
-      <h1 class="text-4xl font-extrabold mb-4">Automate smartly. Play safely.</h1>
-      <p class="mb-6 text-gray-600">Lightweight tool, easy setup — get started with a single click.</p>
-      <a href="#download" class="bg-blue-600 text-white px-6 py-3 rounded">Download</a>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-4">
+                <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">New Version 3.0</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                A Farming Bot for Any<br>
+                <span class="text-blue-300">MapleStory Server</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+                No cheats. No memory editing. Tired of grinding and key-spamming for hours? Let MapleMate handle the heavy lifting while you focus on what matters.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://discord.gg/HjnRpe3TzF" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                    <span>Discord</span>
+                </a>
+                <a href="https://t.me/Autocuber" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                    Telegram
+                </a>
+            </div>
+            <div class="mt-12 flex justify-center space-x-8 text-sm">
+                <div class="flex items-center">
+                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                    24/7 Support
+                </div>
+                <div class="flex items-center">
+                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                    Regular Updates
+                </div>
+                <div class="flex items-center">
+                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                    Undetectable
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="features" class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded shadow">Fast setup<br/><small>One file install</small></div>
-      <div class="bg-white p-6 rounded shadow">Low CPU usage<br/><small>Optimized</small></div>
-      <div class="bg-white p-6 rounded shadow">Docs & support<br/><small>Step-by-step</small></div>
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Universal Compatibility</h2>
+                <p class="text-xl text-gray-600">Works on ALL MapleStory servers and versions with multi-language support</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover luxury-card p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">🌍</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">All Server Support</h3>
+                    <p class="text-gray-600 mb-4">Compatible with every MapleStory version and server</p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• KMS / GMS / SEA</li>
+                        <li>• MapleStory N</li>
+                        <li>• MapleStory Worlds, MapleLand, Artale</li>
+                        <li>• Any Low/High version Server</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover luxury-card p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">🌐</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Multi-Language</h3>
+                    <p class="text-gray-600 mb-4">Interface supports multiple languages</p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• English</li>
+                        <li>• Korean</li>
+                        <li>• Chinese</li>
+                        <li>• More on request</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover luxury-card p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">⚙️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Two Farming Modes</h3>
+                    <p class="text-gray-600 mb-4">Flexible farming system with custom scripting</p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• Auto Mode - Adaptive farming</li>
+                        <li>• Script Mode - Custom routines</li>
+                        <li>• Intuitive Routine Editor</li>
+                        <li>• No memory editing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Smart Features -->
+            <div class="mt-16">
+                <h3 class="text-3xl font-bold text-center mb-12">Smart Utility Features</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">🔮</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Auto Rune Solver</h4>
+                        <p class="text-sm text-gray-600">Handles almost every kind of rune, including custom and spinning runes</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">⚡</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Auto Buffs</h4>
+                        <p class="text-sm text-gray-600">Set custom timing and chaining for your buffs</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">💊</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Auto Consumables</h4>
+                        <p class="text-sm text-gray-600">Manage HP/MP and other items automatically</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">🎯</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Smart Placement</h4>
+                        <p class="text-sm text-gray-600">Choose exact spots for Sol Janus and Erda Shower</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Farmer Features -->
+            <div class="mt-16">
+                <h3 class="text-3xl font-bold text-center mb-12">Dynamic Farmer Features - AI Powered Bot</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">🎭</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Lie Detector Solver</h4>
+                        <p class="text-sm text-gray-600">Automatic lie detector solver for any low version</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">🤖</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Natural Mob Farming</h4>
+                        <p class="text-sm text-gray-600">Follows spawn logic to mimic real player behavior</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">🗺️</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Full-Map Farming</h4>
+                        <p class="text-sm text-gray-600">Efficiently covers the entire map based on monster locations</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">✨</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Holy Symbol Support</h4>
+                        <p class="text-sm text-gray-600">Auto-buff your party (even sell HS service!)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remote Control Features -->
+            <div class="mt-16">
+                <h3 class="text-3xl font-bold text-center mb-12">Remote Notifications & Control via Telegram</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">👑</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Elite Boss Alerts</h4>
+                        <p class="text-sm text-gray-600">Get notified with optional auto CC</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">👤</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Player Detection</h4>
+                        <p class="text-sm text-gray-600">Instant alert + optional auto CC</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">📸</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Scheduled Screenshots</h4>
+                        <p class="text-sm text-gray-600">See regular snapshots of gameplay</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl">📱</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Telegram Commands</h4>
+                        <p class="text-sm text-gray-600">Start/stop bots or send messages remotely</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="pricing" class="py-12">
-      <h2 class="text-2xl font-bold mb-4">Pricing</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <div class="p-6 bg-white rounded shadow">Free — Basic</div>
-        <div class="p-6 bg-white rounded shadow">Pro — $X / month</div>
-        <div class="p-6 bg-white rounded shadow">Lifetime — $Y</div>
-      </div>
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Complete Package</h2>
+                <p class="text-xl text-gray-600">We supply 3 bot types in the same package - everything you need</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="luxury-card rounded-2xl shadow-2xl p-8 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium">Complete Package</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">MapleMate Premium</h3>
+                        <p class="text-gray-600 mb-4">3 Bot Types in One Package</p>
+                        <div class="text-5xl font-bold text-blue-600 mb-2">Contact for Pricing</div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            </span>
+                            <span>All server compatibility (KMS/GMS/SEA/N/Worlds/Artale)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            </span>
+                            <span>Auto Rune Solver (Custom & Spinning runes)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            </span>
+                            <span>Dynamic Farmer with AI-powered features</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            </span>
+                            <span>Intuitive Routine Editor</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            </span>
+                            <span>Telegram remote control & monitoring</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            </span>
+                            <span>Multi-language interface support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            </span>
+                            <span>No memory editing - completely safe</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            </span>
+                            <span>24/7 Discord support</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Bot Types Sub-boxes -->
+                    <div class="mt-8 grid md:grid-cols-3 gap-4">
+                        <div class="luxury-card rounded-lg p-4 border border-blue-200">
+                            <div class="text-center mb-3">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-xl">🤖</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-1">Auto Bot</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs mb-3">A flexible farming system that adapts to your setup.</p>
+                            <ul class="space-y-1 text-xs text-gray-500">
+                                <li>• Smart map navigation</li>
+                                <li>• Custom map routing</li>
+                                <li>• Respawns upon death</li>
+                                <li>• Auto buffs & consumables</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="luxury-card rounded-lg p-4 border border-green-200">
+                            <div class="text-center mb-3">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-xl">🧠</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-1">Dynamic Farmer</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs mb-3">AI-powered bot with advanced features for any low version server.</p>
+                            <ul class="space-y-1 text-xs text-gray-500">
+                                <li>• Lie Detector Solver</li>
+                                <li>• Natural Mob Farming</li>
+                                <li>• Full-Map Farming</li>
+                                <li>• Holy Symbol Support</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="luxury-card rounded-lg p-4 border border-purple-200">
+                            <div class="text-center mb-3">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-xl">⚙️</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-1">Script Mode</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs mb-3">Write your own routines and logic with our intuitive editor.</p>
+                            <ul class="space-y-1 text-xs text-gray-500">
+                                <li>• Intuitive Routine Editor</li>
+                                <li>• Custom skill rotations</li>
+                                <li>• Advanced automation logic</li>
+                                <li>• Visual drag-and-drop</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <button class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors mr-4">
+                            Contact Us
+                        </button>
+                        <button class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors">
+                            Join Discord
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="faq" class="py-12">
-      <h2 class="text-2xl font-bold mb-4">FAQ</h2>
-      <details class="bg-white p-4 rounded mb-2"><summary class="font-semibold">Is this safe?</summary><p class="mt-2 text-gray-600">Depends — follow the docs.</p></details>
-      <details class="bg-white p-4 rounded mb-2"><summary class="font-semibold">How to install?</summary><p class="mt-2 text-gray-600">Download & unzip, run the EXE/script.</p></details>
-    </section>
-  </main>
 
-  <footer class="bg-white border-t">
-    <div class="max-w-5xl mx-auto p-6 text-sm text-gray-500">© 2025 YourBrand — Links: Discord</div>
-  </footer>
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Everything you need to know about MapleMate</p>
+            </div>
+            
+            <div class="space-y-4">
+                <details class="luxury-card rounded-lg shadow-sm">
+                    <summary class="p-6 cursor-pointer font-semibold text-lg hover:bg-gray-50 transition-colors">
+                        Is MapleMate safe to use?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        Yes, MapleMate uses no memory editing or cheats. It operates through safe automation methods that mimic real player behavior, making it completely safe for your account.
+                    </div>
+                </details>
+                
+                <details class="luxury-card rounded-lg shadow-sm">
+                    <summary class="p-6 cursor-pointer font-semibold text-lg hover:bg-gray-50 transition-colors">
+                        What servers does MapleMate support?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        MapleMate works on ALL MapleStory servers including KMS, GMS, SEA, MapleStory N, MapleStory Worlds, MapleLand, Artale, and any low or high version server.
+                    </div>
+                </details>
+                
+                <details class="luxury-card rounded-lg shadow-sm">
+                    <summary class="p-6 cursor-pointer font-semibold text-lg hover:bg-gray-50 transition-colors">
+                        What are the 3 bot types included?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        The package includes: 1) Auto Mode farming bot, 2) Script Mode with custom routines, and 3) Dynamic Farmer with AI-powered features for advanced automation.
+                    </div>
+                </details>
+                
+                <details class="luxury-card rounded-lg shadow-sm">
+                    <summary class="p-6 cursor-pointer font-semibold text-lg hover:bg-gray-50 transition-colors">
+                        How does the Telegram integration work?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        You can receive alerts for elite bosses, player detection, white room detection, and lie detector alerts. You can also take screenshots, record videos, and control the bot remotely through Telegram commands.
+                    </div>
+                </details>
+                
+                <details class="luxury-card rounded-lg shadow-sm">
+                    <summary class="p-6 cursor-pointer font-semibold text-lg hover:bg-gray-50 transition-colors">
+                        What languages are supported?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        The interface supports English, Korean, and Chinese. Additional languages can be added upon request.
+                    </div>
+                </details>
+                
+                <details class="luxury-card rounded-lg shadow-sm">
+                    <summary class="p-6 cursor-pointer font-semibold text-lg hover:bg-gray-50 transition-colors">
+                        How do I get started?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">
+                        Contact us through Discord (AutoCuber1) or join our Discord server (discord.gg/HjnRpe3TzF) for pricing and setup assistance. We provide full support to get you started.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 hero-gradient text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to level up?</h2>
+            <p class="text-xl mb-8 text-blue-100">Join the legions of players who are already enjoying the benefits of MapleMate.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://discord.gg/HjnRpe3TzF" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                    <span>Discord</span>
+                </a>
+                <a href="https://t.me/Autocuber" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                    Telegram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-bg text-white py-12 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/maplemate.PNG" alt="MapleMate" class="h-8 w-8 rounded-lg">
+                        <span class="text-2xl font-bold">MapleMate</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">MapleMate is the leading MapleStory assistant, helping players optimize their gameplay experience with powerful automation tools.</p>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Changelog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://discord.gg/HjnRpe3TzF" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Discord Server</a></li>
+                        <li><a href="https://t.me/Autocuber" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Telegram</a></li>
+                        <li><span class="text-gray-400">Discord DM: AutoCuber1</span></li>
+                        <li><span class="text-gray-400">24/7 Support Available</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 MapleMate Bot. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mt-4 md:mt-0">MapleMate is not affiliated with or endorsed by MapleStory or Nexon.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
