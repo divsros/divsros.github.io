@@ -190,6 +190,98 @@
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
+
+        /* Premium Gold Accents */
+        .gold-text {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 50%, #f6d365 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gold-border {
+            border: 1px solid rgba(246, 211, 101, 0.4);
+        }
+
+        /* Enhanced Luxury Card */
+        .ultra-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .ultra-card:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 
+                0 20px 48px rgba(139, 92, 246, 0.2),
+                0 0 0 1px rgba(139, 92, 246, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        /* Glow Effect */
+        .glow-purple {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), 0 0 60px rgba(139, 92, 246, 0.1);
+        }
+
+        .glow-blue {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Premium Badge */
+        .premium-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Server Chip */
+        .server-chip {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .server-chip:hover {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(59, 130, 246, 0.25) 100%);
+            border-color: rgba(139, 92, 246, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2);
+        }
+
+        /* Section Title Styling */
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+
+        /* Feature Icon Glow */
+        .icon-glow {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body class="luxury-bg text-gray-900">
@@ -232,7 +324,7 @@
                 <span class="gradient-text">MapleStory Server</span>
             </h1>
             <p class="text-xl md:text-2xl mb-12 text-white-muted max-w-4xl mx-auto leading-relaxed font-light">
-                No cheats. No memory editing. Tired of grinding and key-spamming for hours? Let MapleMate handle the heavy lifting while you focus on what matters.
+                No cheats. No memory editing. Simply AI reacting to your updating screen. Tired of grinding and key-spamming for hours? Let MapleMate do that for you.
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
                 <a href="https://discord.gg/HjnRpe3TzF" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-600 px-10 py-5 rounded-xl text-lg font-bold hover:bg-gray-50 transition-all duration-300 flex items-center justify-center space-x-3 shadow-2xl hover:shadow-3xl transform hover:scale-105">
@@ -276,72 +368,121 @@
                 <h2 class="text-5xl md:text-6xl font-black text-white-soft mb-6">Works on ALL MapleStory Servers</h2>
                 <p class="text-xl text-white-muted max-w-3xl mx-auto leading-relaxed">Multi-language support across every MapleStory version and server type</p>
             </div>
+
+            <!-- Bot Demo Videos -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+                <div>
+                    <h4 class="text-3xl font-black mb-4 text-center">
+                        <span class="gradient-text">Farming Bot</span>
+                    </h4>
+                    <div class="relative w-full" style="padding-bottom: 56.25%;">
+                        <iframe loading="lazy" class="absolute top-0 left-0 w-full h-full rounded-xl shadow-2xl border-2 border-white/10" src="https://www.youtube.com/embed/PkK-WDmbPok?rel=0&playsinline=1" title="Farming Bot Demo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-3xl font-black mb-4 text-center">
+                        <span class="gradient-text">Dynamic Farmer</span>
+                    </h4>
+                    <div class="relative w-full" style="padding-bottom: 56.25%;">
+                        <iframe loading="lazy" class="absolute top-0 left-0 w-full h-full rounded-xl shadow-2xl border-2 border-white/10" src="https://www.youtube.com/embed/Hv5VlItZ1kw?rel=0&playsinline=1" title="Dynamic Bot Demo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-3xl font-black mb-4 text-center">
+                        <span class="gradient-text">GMS Auto Cuber</span>
+                    </h4>
+                    <div class="relative w-full" style="padding-bottom: 56.25%;">
+                        <iframe loading="lazy" class="absolute top-0 left-0 w-full h-full rounded-xl shadow-2xl border-2 border-white/10" src="https://www.youtube.com/embed/wjgDNFLvBH0?rel=0&playsinline=1" title="GMS Auto Cuber" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-3xl font-black mb-4 text-center">
+                        <span class="gradient-text">Other Servers</span>
+                    </h4>
+                    <div class="relative w-full" style="padding-bottom: 56.25%;">
+                        <iframe loading="lazy" class="absolute top-0 left-0 w-full h-full rounded-xl shadow-2xl border-2 border-white/10" src="https://www.youtube.com/embed/SnkDccMstj4?rel=0&playsinline=1" title="Other Servers Auto Cuber" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
+                <div class="ultra-card rounded-2xl p-8 card-hover">
+                    <div class="icon-glow mb-6">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
                     <h3 class="text-xl font-bold mb-4 text-white">All Server Support</h3>
                     <p class="text-gray-300 mb-4 text-sm leading-relaxed">Compatible with every MapleStory version and server</p>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50"></span>
                             KMS / GMS / SEA
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50"></span>
                             MapleStory N
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
-                            MapleStory Worlds, MapleLand, Artale
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50"></span>
+                            MapleStory Worlds, MapleLand, Artale, MapleRoyals, MapleLegends
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
-                            Any Low/High version Server
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50"></span>
+                            Any low version server / any high version server
                         </li>
                     </ul>
                 </div>
                 
-                <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
+                <div class="ultra-card rounded-2xl p-8 card-hover">
+                    <div class="icon-glow mb-6">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+                    </div>
                     <h3 class="text-xl font-bold mb-4 text-white">Multi-Language</h3>
                     <p class="text-gray-300 mb-4 text-sm leading-relaxed">Interface supports multiple languages</p>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-green-500 rounded-full shadow-lg shadow-green-500/50"></span>
                             English
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-green-500 rounded-full shadow-lg shadow-green-500/50"></span>
                             Korean
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-green-500 rounded-full shadow-lg shadow-green-500/50"></span>
                             Chinese
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-green-500 rounded-full shadow-lg shadow-green-500/50"></span>
                             More on request
                         </li>
                     </ul>
                 </div>
                 
-                <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                    <h3 class="text-xl font-bold mb-4 text-white">Three Farming Modes</h3>
-                    <p class="text-gray-300 mb-4 text-sm leading-relaxed">Multiple bot types for different automation needs</p>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
-                            Auto Bot - Pre-made routines (up to 3)
+                <div class="ultra-card rounded-2xl p-8 card-hover">
+                    <div class="icon-glow mb-6">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">4 Bot Types</h3>
+                    <p class="text-gray-300 mb-4 text-sm leading-relaxed">Yes — 4 different bots in one package</p>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full shadow-lg shadow-purple-500/50"></span>
+                            Auto Bot - High version servers masterpiece
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
-                            Dynamic Farmer - AI-powered features
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full shadow-lg shadow-purple-500/50"></span>
+                            Dynamic Farmer - AI powered (low version compatible)
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
-                            Script Mode - Full command scripting
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full shadow-lg shadow-purple-500/50"></span>
+                            Recorder Mode - follow a recorded routine
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full shadow-lg shadow-purple-500/50"></span>
+                            Script Mode - write your own routines & logic
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full shadow-lg shadow-purple-500/50"></span>
                             Built-in special features for Auto & Dynamic
                         </li>
                     </ul>
@@ -349,172 +490,294 @@
             </div>
 
              <!-- Smart Features -->
-             <div class="mt-16">
-                 <h3 class="text-3xl font-bold text-center mb-16 text-white">Smart Utility Features - All 3 Bots</h3>
+             <div class="mt-20">
+                 <div class="text-center mb-16">
+                     <h3 class="text-4xl font-black text-white section-title">Smart Utility Features</h3>
+                     <p class="text-gray-400 mt-6">Included with all bot types</p>
+                 </div>
                  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                         <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20 h-48">
-                             <div class="text-left">
-                                 <h4 class="text-base font-bold text-white mb-2">Auto Rune Solver</h4>
-                                 <p class="text-xs text-gray-300 mb-4">Solve any kind of rune</p>
+                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <div class="ultra-card rounded-2xl p-8 card-hover">
+                             <div class="icon-glow mb-4">
+                                 <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
                              </div>
-                             <ul class="text-xs text-gray-300 space-y-1.5">
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0"></span>
+                             <h4 class="text-lg font-bold text-white mb-3">Auto Rune Solver</h4>
+                             <p class="text-sm text-gray-400 mb-4">Solve any kind of rune</p>
+                             <ul class="text-sm text-gray-300 space-y-2">
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-blue-400 rounded-full shadow-lg shadow-blue-400/50"></span>
                                      <span>Normal runes</span>
                                  </li>
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0"></span>
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-blue-400 rounded-full shadow-lg shadow-blue-400/50"></span>
                                      <span>Custom runes</span>
                                  </li>
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0"></span>
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-blue-400 rounded-full shadow-lg shadow-blue-400/50"></span>
                                      <span>Spinning runes</span>
                                  </li>
                              </ul>
                          </div>
-                         <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20 h-48">
-                             <div class="text-left">
-                                 <h4 class="text-base font-bold text-white mb-2">Buff System</h4>
-                                 <p class="text-xs text-gray-300 mb-4">Advanced buff management</p>
+                         <div class="ultra-card rounded-2xl p-8 card-hover">
+                             <div class="icon-glow mb-4">
+                                 <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                              </div>
-                             <ul class="text-xs text-gray-300 space-y-1.5">
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-green-400 rounded-full flex-shrink-0"></span>
+                             <h4 class="text-lg font-bold text-white mb-3">Buff System</h4>
+                             <p class="text-sm text-gray-400 mb-4">Advanced buff management</p>
+                             <ul class="text-sm text-gray-300 space-y-2">
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-green-400 rounded-full shadow-lg shadow-green-400/50"></span>
                                      <span>Choose up to 8 buffs with custom intervals</span>
                                  </li>
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-green-400 rounded-full flex-shrink-0"></span>
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-green-400 rounded-full shadow-lg shadow-green-400/50"></span>
                                      <span>Auto Pet Food</span>
                                  </li>
                              </ul>
                          </div>
-                         <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20 h-48">
-                             <div class="text-left">
-                                 <h4 class="text-base font-bold text-white mb-2">Auto Summon Placement</h4>
-                                 <p class="text-xs text-gray-300 mb-4">Precise summon control</p>
+                         <div class="ultra-card rounded-2xl p-8 card-hover">
+                             <div class="icon-glow mb-4">
+                                 <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path></svg>
                              </div>
-                             <ul class="text-xs text-gray-300 space-y-1.5">
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-purple-400 rounded-full flex-shrink-0"></span>
+                             <h4 class="text-lg font-bold text-white mb-3">Auto Summon Placement</h4>
+                             <p class="text-sm text-gray-400 mb-4">Precise summon control</p>
+                             <ul class="text-sm text-gray-300 space-y-2">
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-lg shadow-purple-400/50"></span>
                                      <span>Up to 3 Sol Janus</span>
                                  </li>
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-purple-400 rounded-full flex-shrink-0"></span>
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-lg shadow-purple-400/50"></span>
                                      <span>2 Erda Showers / Will</span>
                                  </li>
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-purple-400 rounded-full flex-shrink-0"></span>
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-lg shadow-purple-400/50"></span>
                                      <span>Extra 2 custom summons</span>
-                                 </li>
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-purple-400 rounded-full flex-shrink-0"></span>
-                                     <span>(Optional) Choose placement direction</span>
                                  </li>
                              </ul>
                          </div>
-                         <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20 h-48">
-                             <div class="text-left">
-                                 <h4 class="text-base font-bold text-white mb-2">Auto HP & MP</h4>
-                                 <p class="text-xs text-gray-300 mb-4">Automatic potion management</p>
+                         <div class="ultra-card rounded-2xl p-8 card-hover">
+                             <div class="icon-glow mb-4">
+                                 <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                              </div>
-                             <ul class="text-xs text-gray-300 space-y-1.5">
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-red-400 rounded-full flex-shrink-0"></span>
+                             <h4 class="text-lg font-bold text-white mb-3">Auto HP & MP</h4>
+                             <p class="text-sm text-gray-400 mb-4">Automatic potion management</p>
+                             <ul class="text-sm text-gray-300 space-y-2">
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-red-400 rounded-full shadow-lg shadow-red-400/50"></span>
                                      <span>Auto HP potion</span>
                                  </li>
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-red-400 rounded-full flex-shrink-0"></span>
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-red-400 rounded-full shadow-lg shadow-red-400/50"></span>
                                      <span>Auto MP potion</span>
                                  </li>
                              </ul>
                          </div>
-                         <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20 h-48">
-                             <div class="text-left">
-                                 <h4 class="text-base font-bold text-white mb-2">Auto Consumables</h4>
-                                 <p class="text-xs text-gray-300 mb-4">Automatic item management and usage</p>
+                         <div class="ultra-card rounded-2xl p-8 card-hover">
+                             <div class="icon-glow mb-4">
+                                 <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                              </div>
-                             <ul class="text-xs text-gray-300 space-y-1.5">
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full flex-shrink-0"></span>
+                             <h4 class="text-lg font-bold text-white mb-3">Auto Consumables</h4>
+                             <p class="text-sm text-gray-400 mb-4">Automatic item management</p>
+                             <ul class="text-sm text-gray-300 space-y-2">
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-lg shadow-yellow-400/50"></span>
                                      <span>Custom consumables timers</span>
                                  </li>
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full flex-shrink-0"></span>
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-lg shadow-yellow-400/50"></span>
                                      <span>EXP coupons</span>
                                  </li>
-                                 <li class="flex items-center gap-2">
-                                     <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full flex-shrink-0"></span>
+                                 <li class="flex items-center gap-3">
+                                     <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-lg shadow-yellow-400/50"></span>
                                      <span>Consumables that require Enter</span>
                                  </li>
                              </ul>
                          </div>
-                         <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20 h-48">
-                             <div class="text-left">
-                                 <h4 class="text-left font-bold text-white mb-2">Raspberry Pi Support (OPTIONAL)</h4>
-                                 <p class="text-xs text-gray-300">The bot works with Raspberry Pi as an input device for maximum security</p>
+                         <div class="ultra-card rounded-2xl p-8 card-hover">
+                             <div class="icon-glow mb-4">
+                                 <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
                              </div>
+                             <h4 class="text-lg font-bold text-white mb-3">Raspberry Pi Support</h4>
+                             <p class="text-sm text-gray-400">Optional: use Raspberry Pi as an input device for extra security</p>
                          </div>
                      </div>
                  </div>
              </div>
 
             <!-- Dynamic Farmer Features -->
-            <div class="mt-16">
-                <h3 class="text-3xl font-bold text-center mb-12 text-white">Dynamic Farmer Features - AI Powered Bot</h3>
+            <div class="mt-20">
+                <div class="text-center mb-12">
+                    <h3 class="text-4xl font-black text-white section-title">Dynamic Farmer Features</h3>
+                    <p class="text-gray-400 mt-6">AI-Powered Bot Technology</p>
+                </div>
                 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                            <h4 class="font-semibold mb-2 text-white">Natural Mob Farming</h4>
-                            <p class="text-sm text-gray-300">Follows spawn logic to mimic real player behavior</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="ultra-card rounded-2xl p-10 card-hover text-center">
+                            <div class="icon-glow mx-auto">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3 text-white">Natural Mob Farming</h4>
+                            <p class="text-gray-300">Follows spawn logic to mimic real player behavior</p>
                         </div>
-                        <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                            <h4 class="font-semibold mb-2 text-white">Full-Map Farming</h4>
-                            <p class="text-sm text-gray-300">Efficiently hunt any monster that appear on the map based on their live visibility</p>
+                        <div class="ultra-card rounded-2xl p-10 card-hover text-center">
+                            <div class="icon-glow mx-auto">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3 text-white">Full-Map Farming</h4>
+                            <p class="text-gray-300">Efficiently hunt any monster based on live visibility</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Lie Detector Solvers -->
+            <div class="mt-20">
+                <div class="text-center mb-12">
+                    <span class="premium-badge text-white px-6 py-2 rounded-full text-sm font-bold inline-block mb-4">Premium Add-on</span>
+                    <h3 class="text-4xl font-black text-white section-title">Automatic Lie Detector Solvers</h3>
+                </div>
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="ultra-card rounded-3xl p-12 glow-purple">
+                        <div class="text-center mb-10">
+                            <div class="inline-flex items-center gap-4 bg-gradient-to-r from-purple-900/50 to-blue-900/50 px-8 py-4 rounded-2xl border border-purple-500/30">
+                                <span class="text-xl text-white font-semibold">Supported Servers</span>
+                                <span class="gold-text text-2xl font-black">+$10</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+                            <div class="server-chip rounded-xl py-5 px-4 text-center">
+                                <span class="text-white font-bold text-base">Ranmelle</span>
+                            </div>
+                            <div class="server-chip rounded-xl py-5 px-4 text-center">
+                                <span class="text-white font-bold text-base">Haiku</span>
+                            </div>
+                            <div class="server-chip rounded-xl py-5 px-4 text-center">
+                                <span class="text-white font-bold text-base">Timeless</span>
+                            </div>
+                            <div class="server-chip rounded-xl py-5 px-4 text-center">
+                                <span class="text-white font-bold text-base">Kaizen</span>
+                            </div>
+                            <div class="server-chip rounded-xl py-5 px-4 text-center">
+                                <span class="text-white font-bold text-base">Bloom</span>
+                            </div>
+                        </div>
+                        <p class="text-center text-gray-400 text-sm mt-8">Solves lie detector challenges automatically on supported private servers</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Remote Control Features -->
-            <div class="mt-16">
-                <h3 class="text-3xl font-bold text-center mb-12 text-white">Notifications via Alarms & Telegram</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                        <h4 class="font-semibold mb-2 text-white">Other Players in Map</h4>
-                        <p class="text-sm text-gray-300">Get notified when other players enter your map</p>
+            <div class="mt-20">
+                <div class="text-center mb-12">
+                    <h3 class="text-4xl font-black text-white section-title">Remote Notifications & Control</h3>
+                    <p class="text-gray-400 mt-6">Stay connected via Telegram</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Other Players</h4>
+                        <p class="text-xs text-gray-400">Get notified when others enter your map</p>
                     </div>
-                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                        <h4 class="font-semibold mb-2 text-white">Maplestory Disconnected</h4>
-                        <p class="text-sm text-gray-300">Instant alert when connection is lost</p>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Disconnected</h4>
+                        <p class="text-xs text-gray-400">Instant alert when connection is lost</p>
                     </div>
-                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                        <h4 class="font-semibold mb-2 text-white">Character Dead</h4>
-                        <p class="text-sm text-gray-300">Notification when your character dies</p>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-gray-500/20 to-slate-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 12h.01M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Character Dead</h4>
+                        <p class="text-xs text-gray-400">Notification when your character dies</p>
                     </div>
-                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                        <h4 class="font-semibold mb-2 text-white">Character Stuck</h4>
-                        <p class="text-sm text-gray-300">Alert when character gets stuck</p>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-yellow-500/20 to-amber-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Character Stuck</h4>
+                        <p class="text-xs text-gray-400">Alert when character gets stuck</p>
                     </div>
-                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                        <h4 class="font-semibold mb-2 text-white">Lie Detector</h4>
-                        <p class="text-sm text-gray-300">Notify when a lie detector appears</p>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Lie Detector</h4>
+                        <p class="text-xs text-gray-400">Notify when a lie detector appears</p>
                     </div>
-                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                        <h4 class="font-semibold mb-2 text-white">Bounty Hunter Portals</h4>
-                        <p class="text-sm text-gray-300">Notify and disable portal interactions</p>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center gold-border">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-yellow-500/30 to-orange-500/30 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 gold-text">Auto LD Solver</h4>
+                        <p class="text-xs text-gray-400">Add-on (+$10)</p>
                     </div>
-                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                        <h4 class="font-semibold mb-2 text-white">Message Detected</h4>
-                        <p class="text-sm text-gray-300">Get notified when another player is talking to you</p>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Bounty Portals</h4>
+                        <p class="text-xs text-gray-400">Notify and disable portal interactions</p>
                     </div>
-                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                        <h4 class="font-semibold mb-2 text-white">Rune Solve Time</h4>
-                        <p class="text-sm text-gray-300">Notify you when a rune is active and need to be solved</p>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-indigo-500/20 to-blue-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Elite Boss Alerts</h4>
+                        <p class="text-xs text-gray-400">Get notified, optional auto CC</p>
                     </div>
-                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                        <h4 class="font-semibold mb-2 text-white">Map Changed</h4>
-                        <p class="text-sm text-gray-300">Alert when character changes maps</p>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-rose-500/20 to-red-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">White Room</h4>
+                        <p class="text-xs text-gray-400">Instant alert if it happens</p>
+                    </div>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Message Detected</h4>
+                        <p class="text-xs text-gray-400">Player talking to you</p>
+                    </div>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Screenshots</h4>
+                        <p class="text-xs text-gray-400">Scheduled snapshots</p>
+                    </div>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-fuchsia-500/20 to-pink-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Remote Screenshot & Video</h4>
+                        <p class="text-xs text-gray-400">Capture screenshot or record anytime</p>
+                    </div>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-sky-500/20 to-blue-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Telegram Commands</h4>
+                        <p class="text-xs text-gray-400">Start/stop bots remotely</p>
+                    </div>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-lime-500/20 to-green-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Rune Solve Time</h4>
+                        <p class="text-xs text-gray-400">Rune active notification</p>
+                    </div>
+                    <div class="ultra-card rounded-2xl p-6 card-hover text-center">
+                        <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2 text-white">Map Changed</h4>
+                        <p class="text-xs text-gray-400">Character location alerts</p>
                     </div>
                 </div>
             </div>
@@ -534,105 +797,134 @@
                     <h3 class="text-6xl font-black tracking-tight mb-4 drop-shadow-2xl">
                         <span class="gradient-text">MapleMate Premium Bot</span>
                     </h3>
-                    <p class="text-gray-300 mb-8 text-2xl">3 Bot Types in One Package</p>
+                    <p class="text-gray-300 mb-8 text-2xl">4 Bot Types in One Package</p>
                         <div class="pricing-box bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border-2 border-blue-200 shadow-inner mb-4">
-                            <div class="text-6xl font-bold text-blue-600 mb-2">$33<span class="text-2xl text-white">/month</span></div>
-                            <p class="text-white text-lg font-medium">Monthly subscription <span class="block text-base text-yellow-300 mt-2">(Optional setup service: $7 one-time, or use our free manual to set up yourself)</span></p>
+                            <div class="text-6xl font-bold text-blue-600 mb-2">$35<span class="text-2xl text-white">/month</span></div>
+                            <p class="text-white text-lg font-medium">Monthly subscription <span class="block text-base text-yellow-300 mt-2">(Setup service: $10 one-time)</span></p>
                         </div>
                     </div>
                     
                     <!-- Bot Types Sub-boxes -->
-                    <div class="mb-8 grid md:grid-cols-3 gap-4">
-                        <div class="luxury-card rounded-lg p-4 border border-blue-200">
-                            <div class="text-center mb-3">
-                                <h3 class="text-xl font-bold text-white mb-2">Auto Bot</h3>
+                    <div class="mb-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="ultra-card rounded-2xl p-6 card-hover border border-blue-500/30">
+                            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </div>
-                            <p class="text-white text-sm mb-3">Farms using pre-made routines with up to 3 routines that can shuffle between them.</p>
-                            <ul class="space-y-1 text-xs text-white">
-                                <li>• Bot that run based on pre-made routines</li>
-                                <li>• Up to 3 routines per map configuration</li>
-                                <li>• Auto shuffle between routines for maximum safety</li>
-                                <li>• Built-in map editor for easy setup</li>
+                            <h3 class="text-xl font-bold text-white mb-3 text-center">Auto Bot</h3>
+                            <p class="text-gray-300 text-sm mb-4">Farms using pre-made routines with up to 3 routines that shuffle.</p>
+                            <ul class="space-y-2 text-xs text-gray-400">
+                                <li class="flex items-start"><span class="text-blue-400 mr-2">▸</span>Pre-made routine execution</li>
+                                <li class="flex items-start"><span class="text-blue-400 mr-2">▸</span>Up to 3 routines per map</li>
+                                <li class="flex items-start"><span class="text-blue-400 mr-2">▸</span>Auto shuffle for safety</li>
+                                <li class="flex items-start"><span class="text-blue-400 mr-2">▸</span>Built-in map editor</li>
                             </ul>
                         </div>
                         
-                        <div class="luxury-card rounded-lg p-4 border border-green-200">
-                            <div class="text-center mb-3">
-                                <h3 class="text-xl font-bold text-white mb-2">Dynamic Farmer</h3>
+                        <div class="ultra-card rounded-2xl p-6 card-hover border border-green-500/30">
+                            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                             </div>
-                            <p class="text-white text-sm mb-3">AI-powered bot with advanced features for any server.</p>
-                            <ul class="space-y-1 text-xs text-white">
-                                <li>• Natural Mob Farming with AI-powered detection</li>
-                                <li>• Full-Map Farming</li>
+                            <h3 class="text-xl font-bold text-white mb-3 text-center">Dynamic Farmer</h3>
+                            <p class="text-gray-300 text-sm mb-4">AI-powered bot with advanced features for any server.</p>
+                            <ul class="space-y-2 text-xs text-gray-400">
+                                <li class="flex items-start"><span class="text-green-400 mr-2">▸</span>AI-powered mob detection</li>
+                                <li class="flex items-start"><span class="text-green-400 mr-2">▸</span>Full-Map Farming</li>
+                                <li class="flex items-start"><span class="text-green-400 mr-2">▸</span>Auto Looting</li>
+                            </ul>
+                        </div>
+
+                        <div class="ultra-card rounded-2xl p-6 card-hover border border-yellow-500/30">
+                            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-yellow-500/30 to-amber-500/30 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3 text-center">Recorder Mode</h3>
+                            <p class="text-gray-300 text-sm mb-4">Record routines with built-in corrections and randomness.</p>
+                            <ul class="space-y-2 text-xs text-gray-400">
+                                <li class="flex items-start"><span class="text-yellow-400 mr-2">▸</span>Follow recorded routines</li>
+                                <li class="flex items-start"><span class="text-yellow-400 mr-2">▸</span>Auto self-correction</li>
+                                <li class="flex items-start"><span class="text-yellow-400 mr-2">▸</span>Built-in randomness</li>
                             </ul>
                         </div>
                         
-                        <div class="luxury-card rounded-lg p-4 border border-purple-200">
-                            <div class="text-center mb-3">
-                                <h3 class="text-xl font-bold text-white mb-2">Script Mode</h3>
+                        <div class="ultra-card rounded-2xl p-6 card-hover border border-purple-500/30">
+                            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                             </div>
-                            <p class="text-white text-sm mb-3">Most optimal mode requiring full script writing with commands for maximum control.</p>
-                            <ul class="space-y-1 text-xs text-white">
-                                <li>• Farming optimized script bot for best farming experience</li>
-                                <li>• Complete control over logic</li>
+                            <h3 class="text-xl font-bold text-white mb-3 text-center">Script Mode</h3>
+                            <p class="text-gray-300 text-sm mb-4">Full script writing with commands for maximum control.</p>
+                            <ul class="space-y-2 text-xs text-gray-400">
+                                <li class="flex items-start"><span class="text-purple-400 mr-2">▸</span>Optimized farming scripts</li>
+                                <li class="flex items-start"><span class="text-purple-400 mr-2">▸</span>Complete logic control</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded flex items-center justify-center mr-3">
-                                <span class="text-white text-xs font-bold">✓</span>
+                    <div class="grid md:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center p-3 rounded-xl bg-white/5 border border-white/10">
+                            <span class="w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </span>
-                            <span class="text-white">Raspberry Pi support for inputs (OPTIONAL)</span>
+                            <span class="text-gray-200 text-sm">Optional Raspberry Pi support for inputs</span>
                         </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded flex items-center justify-center mr-3">
-                                <span class="text-white text-xs font-bold">✓</span>
+                        <div class="flex items-center p-3 rounded-xl bg-white/5 border border-white/10">
+                            <span class="w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </span>
-                            <span class="text-white">Any server compatibility (KMS/GMS/MapleSEA/MapleStory N/Maplestory Worlds Artale/MapleLand/<br /> ANY other server)</span>
+                            <span class="text-gray-200 text-sm">Any server: KMS/GMS/SEA/N/Artale/MapleLand</span>
                         </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded flex items-center justify-center mr-3">
-                                <span class="text-white text-xs font-bold">✓</span>
+                        <div class="flex items-center p-3 rounded-xl bg-white/5 border border-white/10">
+                            <span class="w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </span>
-                            <span class="text-white">Auto Rune Solver (Normal /Custom / Spinning runes)</span>
+                            <span class="text-gray-200 text-sm">Auto Rune Solver (Normal/Custom/Spinning)</span>
                         </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded flex items-center justify-center mr-3">
-                                <span class="text-white text-xs font-bold">✓</span>
+                        <div class="flex items-center p-3 rounded-xl bg-gradient-to-r from-yellow-500/10 to-amber-500/10 border border-yellow-500/30">
+                            <span class="w-6 h-6 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                             </span>
-                            <span class="text-white">Dynamic Farmer with AI-powered detection</span>
+                            <span class="text-yellow-300 text-sm font-medium">LD Solver add-on (+$10): Ranmelle/Haiku/Timeless/Kaizen/Bloom</span>
                         </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded flex items-center justify-center mr-3">
-                                <span class="text-white text-xs font-bold">✓</span>
+                        <div class="flex items-center p-3 rounded-xl bg-white/5 border border-white/10">
+                            <span class="w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </span>
-                            <span class="text-white">Interactive Routine Editor</span>
+                            <span class="text-gray-200 text-sm">Dynamic Farmer with AI-powered detection</span>
                         </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded flex items-center justify-center mr-3">
-                                <span class="text-white text-xs font-bold">✓</span>
+                        <div class="flex items-center p-3 rounded-xl bg-white/5 border border-white/10">
+                            <span class="w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </span>
-                            <span class="text-white">Telegram remote control & monitoring</span>
+                            <span class="text-gray-200 text-sm">Interactive Routine Editor</span>
                         </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded flex items-center justify-center mr-3">
-                                <span class="text-white text-xs font-bold">✓</span>
+                        <div class="flex items-center p-3 rounded-xl bg-white/5 border border-white/10">
+                            <span class="w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </span>
-                            <span class="text-white">Multi-language interface support</span>
+                            <span class="text-gray-200 text-sm">Recorder Mode (auto-correct + randomness)</span>
                         </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded flex items-center justify-center mr-3">
-                                <span class="text-white text-xs font-bold">✓</span>
+                        <div class="flex items-center p-3 rounded-xl bg-white/5 border border-white/10">
+                            <span class="w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </span>
-                            <span class="text-white">No memory editing - completely safe</span>
+                            <span class="text-gray-200 text-sm">Telegram remote control & monitoring</span>
                         </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded flex items-center justify-center mr-3">
-                                <span class="text-white text-xs font-bold">✓</span>
+                        <div class="flex items-center p-3 rounded-xl bg-white/5 border border-white/10">
+                            <span class="w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </span>
-                            <span class="text-white">24/7 Discord support</span>
+                            <span class="text-gray-200 text-sm">Multi-language interface support</span>
+                        </div>
+                        <div class="flex items-center p-3 rounded-xl bg-white/5 border border-white/10">
+                            <span class="w-6 h-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </span>
+                            <span class="text-gray-200 text-sm">No memory editing - completely safe</span>
+                        </div>
+                        <div class="flex items-center p-3 rounded-xl bg-white/5 border border-white/10 md:col-span-2 justify-center">
+                            <span class="w-6 h-6 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                            </span>
+                            <span class="text-blue-300 text-sm font-medium">24/7 Discord support included</span>
                         </div>
                     </div>
                     
@@ -640,8 +932,7 @@
                         <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-4 rounded-xl text-xl font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-xl">
                             Join Discord & Get Started
                         </button>
-                        <p class="text-gray-300 text-sm mt-3">$33/month (setup $7 extra) • Instant access • 24/7 support • Active community</p>
-                        <p class="text-gray-300 text-sm mt-3">$33/month • Optional setup service $7 (manual available for self-setup) • Instant access • 24/7 support • Active community</p>
+                        <p class="text-gray-300 text-sm mt-3">$35/month • Setup service $10 (one-time) • Instant access • 24/7 support • Active community</p>
                     </div>
                 </div>
             </div>
@@ -653,75 +944,77 @@
     <section id="faq" class="py-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-                <p class="text-xl text-gray-300">Everything you need to know about MapleMate</p>
+                <div class="inline-flex items-center gap-2 bg-purple-500/20 text-purple-300 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-purple-500/30">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Got Questions?
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-4 section-title">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-400 mt-8">Everything you need to know about MapleMate</p>
             </div>
             
             <div class="space-y-4">
-                <details class="luxury-card rounded-lg shadow-sm">
-                    <summary class="p-6 cursor-pointer font-semibold text-lg text-white hover:bg-gray-50 hover:bg-opacity-10 transition-colors">
-                        Is MapleMate safe to use?
+                <details class="ultra-card rounded-2xl group">
+                    <summary class="p-6 cursor-pointer font-bold text-lg text-white hover:text-blue-300 transition-colors flex items-center justify-between">
+                        <span>Is MapleMate safe to use?</span>
+                        <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
-                    <div class="px-6 pb-6 text-gray-300">
-                        Yes, MapleMate uses no memory editing or cheats. <br />
-                        It operates using special movement algorithms that mimic human patterns with extreme randomness, making it completely safe for your account.<br />
-                        For maximum safety on the official servers, we recommend using a Raspberry Pi device for inputs.<br />
-                        Of course, we recommend semi-monitoring the bot as people can always pass by, and in some cases, 10 seconds of you not replying can be enough to get banned.
+                    <div class="px-6 pb-6 text-gray-400 border-t border-white/10 pt-4 mt-2">
+                        Yes, MapleMate uses no memory editing or cheats. It operates using special movement algorithms that mimic human patterns with extreme randomness, making it completely safe for your account. Optional: for extra safety on official servers, you can use a Raspberry Pi device for inputs (not required). Of course, we recommend semi-monitoring the bot as people can always pass by.
                     </div>
                 </details>
                 
-                <details class="luxury-card rounded-lg shadow-sm">
-                    <summary class="p-6 cursor-pointer font-semibold text-lg text-white hover:bg-gray-50 hover:bg-opacity-10 transition-colors">
-                        What servers does MapleMate support?
+                <details class="ultra-card rounded-2xl group">
+                    <summary class="p-6 cursor-pointer font-bold text-lg text-white hover:text-blue-300 transition-colors flex items-center justify-between">
+                        <span>What servers does MapleMate support?</span>
+                        <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
-                    <div class="px-6 pb-6 text-gray-300">
+                    <div class="px-6 pb-6 text-gray-400 border-t border-white/10 pt-4 mt-2">
                         MapleMate works on ALL MapleStory servers including KMS, GMS, SEA, MapleStory N, MapleStory Worlds, MapleLand, Artale, and any low or high version server.
                     </div>
                 </details>
                 
-                <details class="luxury-card rounded-lg shadow-sm">
-                    <summary class="p-6 cursor-pointer font-semibold text-lg text-white hover:bg-gray-50 hover:bg-opacity-10 transition-colors">
-                        What are the 3 bot types included?
+                <details class="ultra-card rounded-2xl group">
+                    <summary class="p-6 cursor-pointer font-bold text-lg text-white hover:text-blue-300 transition-colors flex items-center justify-between">
+                        <span>What are the 4 bot types included?</span>
+                        <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
-                    <div class="px-6 pb-6 text-gray-300">
-                        The package includes: <br />
-                        Auto Bot farming bot<br />
-                        Script Mode with custom routines<br />
-                        Dynamic Farmer with AI-powered features for active monsters detection.
+                    <div class="px-6 pb-6 text-gray-400 border-t border-white/10 pt-4 mt-2">
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span>Auto Bot — Pre-made routine farming</li>
+                            <li class="flex items-center"><span class="text-green-400 mr-2">•</span>Dynamic Farmer — AI-powered active mob detection</li>
+                            <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span>Recorder Mode — Record, follow, auto-correct + randomness</li>
+                            <li class="flex items-center"><span class="text-purple-400 mr-2">•</span>Script Mode — Full control with custom scripts</li>
+                        </ul>
                     </div>
                 </details>
                 
-                <details class="luxury-card rounded-lg shadow-sm">
-                    <summary class="p-6 cursor-pointer font-semibold text-lg text-white hover:bg-gray-50 hover:bg-opacity-10 transition-colors">
-                        How does the Telegram integration work?
+                <details class="ultra-card rounded-2xl group">
+                    <summary class="p-6 cursor-pointer font-bold text-lg text-white hover:text-blue-300 transition-colors flex items-center justify-between">
+                        <span>How does the Telegram integration work?</span>
+                        <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
-                    <div class="px-6 pb-6 text-gray-300">
-                        You can receive alerts for events such as: <br />
-                        Player entering the map<br />
-                        Player is talking to you<br />
-                        White room detection<br />
-                        Lie detector appear<br />......<br />
-
-                        You can also take screenshots, record videos, and control the bot remotely through Telegram commands.
+                    <div class="px-6 pb-6 text-gray-400 border-t border-white/10 pt-4 mt-2">
+                        Receive alerts for: player entering map, player talking to you, white room detection, lie detector, and more. You can also take screenshots, record videos, and control the bot remotely through Telegram commands.
                     </div>
                 </details>
                 
-                <details class="luxury-card rounded-lg shadow-sm">
-                    <summary class="p-6 cursor-pointer font-semibold text-lg text-white hover:bg-gray-50 hover:bg-opacity-10 transition-colors">
-                        What languages are supported?
+                <details class="ultra-card rounded-2xl group">
+                    <summary class="p-6 cursor-pointer font-bold text-lg text-white hover:text-blue-300 transition-colors flex items-center justify-between">
+                        <span>What languages are supported?</span>
+                        <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
-                    <div class="px-6 pb-6 text-gray-300">
+                    <div class="px-6 pb-6 text-gray-400 border-t border-white/10 pt-4 mt-2">
                         The interface supports English, Korean, and Chinese. Additional languages can be added upon request.
                     </div>
                 </details>
                 
-                <details class="luxury-card rounded-lg shadow-sm">
-                    <summary class="p-6 cursor-pointer font-semibold text-lg text-white hover:bg-gray-50 hover:bg-opacity-10 transition-colors">
-                        How do I get started?
+                <details class="ultra-card rounded-2xl group">
+                    <summary class="p-6 cursor-pointer font-bold text-lg text-white hover:text-blue-300 transition-colors flex items-center justify-between">
+                        <span>How do I get started?</span>
+                        <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
-                    <div class="px-6 pb-6 text-gray-300">
-                        Contact us through Discord (AutoCuber1) or join our Discord server (discord.gg/HjnRpe3TzF). 
-                        <br />We provide full support to get you started.
+                    <div class="px-6 pb-6 text-gray-400 border-t border-white/10 pt-4 mt-2">
+                        Contact us through Discord (AutoCuber1) or join our Discord server (discord.gg/HjnRpe3TzF). We provide full support to get you started.
                     </div>
                 </details>
             </div>
@@ -779,7 +1072,7 @@
             </div>
             
             <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2024 MapleMate Bot. All rights reserved.</p>
+                <p class="text-gray-400 text-sm">© 2026 MapleMate Bot. All rights reserved.</p>
                 <p class="text-gray-400 text-sm mt-4 md:mt-0">MapleMate is not affiliated with or endorsed by MapleStory or Nexon.</p>
             </div>
         </div>
