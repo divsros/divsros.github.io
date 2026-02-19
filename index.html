@@ -148,6 +148,7 @@
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
             border: 2px solid rgba(59, 130, 246, 0.2);
             box-shadow: inset 0 2px 4px rgba(59, 130, 246, 0.1), 0 4px 20px rgba(59, 130, 246, 0.1);
+            cursor: pointer;
         }
         
         @keyframes shimmer {
@@ -282,6 +283,171 @@
             box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
             margin-bottom: 1rem;
         }
+
+        /* ───── Pricing Calculator ───── */
+        .calc-wrapper {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(22, 33, 62, 0.98) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+        }
+
+        .calc-panel {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 0.875rem;
+            padding: 1.25rem;
+        }
+
+        .calc-stepper-btn {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .calc-stepper-btn:hover {
+            background: rgba(99, 102, 241, 0.25);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+
+        /* Slider */
+        .calc-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(90deg, #6366f1 0%, #6366f1 var(--slider-pct, 0%), rgba(255,255,255,0.1) var(--slider-pct, 0%), rgba(255,255,255,0.1) 100%);
+            outline: none;
+            cursor: pointer;
+        }
+        .calc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #818cf8;
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .calc-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+        .calc-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #818cf8;
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+            cursor: pointer;
+        }
+
+        /* Tier cards */
+        .calc-tier-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 0.625rem;
+            padding: 0.625rem 0.75rem;
+            text-align: center;
+            transition: all 0.25s;
+        }
+        .calc-tier-card.active {
+            border-color: rgba(99, 102, 241, 0.6);
+            background: rgba(99, 102, 241, 0.12);
+            box-shadow: 0 0 16px rgba(99, 102, 241, 0.15);
+        }
+
+        /* Plan buttons */
+        .calc-plan-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 0.875rem 1rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-align: left;
+        }
+        .calc-plan-card:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            background: rgba(139, 92, 246, 0.08);
+        }
+        .calc-plan-card.active {
+            border-color: rgba(99, 102, 241, 0.7);
+            background: rgba(99, 102, 241, 0.15);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.12);
+        }
+
+        /* Add-on toggles */
+        .calc-addon {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .calc-addon:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .calc-addon.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .calc-addon input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #6366f1;
+            cursor: pointer;
+        }
+
+        /* Order summary */
+        .calc-summary {
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.9) 0%, rgba(15, 20, 40, 0.95) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 0.875rem;
+            padding: 1.5rem;
+        }
+        .calc-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.375rem 0;
+        }
+        .calc-total-box {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 0.75rem;
+        }
+        .calc-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
     </style>
 </head>
 <body class="luxury-bg text-gray-900">
@@ -320,7 +486,7 @@
         <div class="floating-elements"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 class="text-6xl md:text-7xl font-black mb-8 leading-tight text-white-soft">
-                A Farming Bot for Any<br>
+                AI Farming Bot for Any<br>
                 <span class="gradient-text">MapleStory Server</span>
             </h1>
             <p class="text-xl md:text-2xl mb-12 text-white-muted max-w-4xl mx-auto leading-relaxed font-light">
@@ -656,7 +822,7 @@
                                 <span class="gold-text text-2xl font-black">+$10</span>
                             </div>
                         </div>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+                        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                             <div class="server-chip rounded-xl py-5 px-4 text-center">
                                 <span class="text-white font-bold text-base">Ranmelle</span>
                             </div>
@@ -668,9 +834,6 @@
                             </div>
                             <div class="server-chip rounded-xl py-5 px-4 text-center">
                                 <span class="text-white font-bold text-base">Kaizen</span>
-                            </div>
-                            <div class="server-chip rounded-xl py-5 px-4 text-center">
-                                <span class="text-white font-bold text-base">Bloom</span>
                             </div>
                         </div>
                         <p class="text-center text-gray-400 text-sm mt-8">Solves lie detector challenges automatically on supported private servers</p>
@@ -725,7 +888,7 @@
                             <svg class="w-7 h-7 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         </div>
                         <h4 class="font-bold mb-2 gold-text">Auto LD Solver</h4>
-                        <p class="text-xs text-gray-400">Add-on (+$10)</p>
+                        <p class="text-xs text-gray-400">Add-on (+$10) • Available on all plans</p>
                     </div>
                     <div class="ultra-card rounded-2xl p-6 card-hover text-center">
                         <div class="w-10 h-10 mx-auto mb-4 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center">
@@ -799,7 +962,7 @@
     <section id="pricing" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-6xl mx-auto">
                 <div class="pricing-highlight premium-card rounded-2xl shadow-2xl p-10 relative border-2 border-blue-500/30">
                     <div class="text-center mb-8">
                         <div class="inline-block mb-6">
@@ -809,9 +972,46 @@
                         <span class="gradient-text">MapleMate Premium Bot</span>
                     </h3>
                     <p class="text-gray-300 mb-8 text-2xl">4 Bot Types in One Package</p>
-                        <div class="pricing-box bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border-2 border-blue-200 shadow-inner mb-4">
-                            <div class="text-6xl font-bold text-blue-600 mb-2">$35<span class="text-2xl text-white">/month</span></div>
-                            <p class="text-white text-lg font-medium">Monthly subscription <span class="block text-base text-yellow-300 mt-2">(Setup service: $10 one-time)</span></p>
+                        <div class="grid md:grid-cols-3 gap-6 mb-6">
+                            <div class="pricing-box card-hover rounded-2xl p-6 border-2 border-blue-200 shadow-inner">
+                                <div class="text-center">
+                                    <div class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2 rounded-xl text-sm font-bold shadow-xl">5 Days - $10</div>
+                                    <div class="text-4xl font-bold text-blue-600 mt-2 mb-4">$10</div>
+                                </div>
+                                <ul class="space-y-2 text-sm text-left">
+                                    <li class="text-white">• 4 Type of Bots</li>
+                                    <li class="text-white">• Minimal support included</li>
+                                    <li class="text-white">• Setup Service not available</li>
+                                    <li class="text-yellow-300">• LD Solver: Ranmelle/Haiku/Timeless/Kaizen (+$10)</li>
+                                    <li class="text-white">• Cannot upgrade to other plans</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-box card-hover rounded-2xl p-6 border-2 border-purple-300 shadow-inner">
+                                <div class="text-center">
+                                    <div class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2 rounded-xl text-sm font-bold shadow-xl">15 Days - $20</div>
+                                    <div class="text-4xl font-bold text-blue-600 mt-2 mb-4">$20</div>
+                                </div>
+                                <ul class="space-y-2 text-sm text-left">
+                                    <li class="text-white">• 4 Type of Bots</li>
+                                    <li class="text-white">• Moderate support included</li>
+                                    <li class="text-white">• Setup Service available ($15)</li>
+                                    <li class="text-yellow-300">• LD Solver: Ranmelle/Haiku/Timeless/Kaizen (+$10)</li>
+                                    <li class="text-white">• Can upgrade to 30 days (up to 10 days after purchase)</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-box card-hover rounded-2xl p-6 border-2 border-green-300 shadow-inner relative">
+                                <div class="absolute -top-3 -right-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 rounded-xl text-xs font-bold shadow-xl">Best Value</div>
+                                <div class="text-center">
+                                    <div class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2 rounded-xl text-sm font-bold shadow-xl">30 Days - $35</div>
+                                    <div class="text-4xl font-bold text-blue-600 mt-2 mb-4">$35</div>
+                                </div>
+                                <ul class="space-y-2 text-sm text-left">
+                                    <li class="text-white">• 4 Type of Bots</li>
+                                    <li class="text-white">• Top support included</li>
+                                    <li class="text-white">• Setup Service Available ($10)</li>
+                                    <li class="text-yellow-300">• LD Solver: Ranmelle/Haiku/Timeless/Kaizen (+$10)</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     
@@ -822,8 +1022,8 @@
                                 <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-3 text-center">Auto Bot</h3>
-                            <p class="text-gray-300 text-sm mb-4">Farms using pre-made routines with up to 3 routines that shuffle.</p>
-                            <ul class="space-y-2 text-xs text-gray-400">
+                            <p class="text-white text-sm mb-4">Farms using pre-made routines with up to 3 routines that shuffle.</p>
+                            <ul class="space-y-2 text-xs text-white">
                                 <li class="flex items-start"><span class="text-blue-400 mr-2">▸</span>Pre-made routine execution</li>
                                 <li class="flex items-start"><span class="text-blue-400 mr-2">▸</span>Up to 3 routines per map</li>
                                 <li class="flex items-start"><span class="text-blue-400 mr-2">▸</span>Auto shuffle for safety</li>
@@ -836,8 +1036,8 @@
                                 <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-3 text-center">Dynamic Farmer</h3>
-                            <p class="text-gray-300 text-sm mb-4">AI-powered bot with advanced features for any server.</p>
-                            <ul class="space-y-2 text-xs text-gray-400">
+                            <p class="text-white text-sm mb-4">AI-powered bot with advanced features for any server.</p>
+                            <ul class="space-y-2 text-xs text-white">
                                 <li class="flex items-start"><span class="text-green-400 mr-2">▸</span>AI-powered mob detection</li>
                                 <li class="flex items-start"><span class="text-green-400 mr-2">▸</span>Full-Map Farming</li>
                                 <li class="flex items-start"><span class="text-green-400 mr-2">▸</span>Auto Looting</li>
@@ -849,8 +1049,8 @@
                                 <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-3 text-center">Recorder Mode</h3>
-                            <p class="text-gray-300 text-sm mb-4">Record routines with built-in corrections and randomness.</p>
-                            <ul class="space-y-2 text-xs text-gray-400">
+                            <p class="text-white text-sm mb-4">Record routines with built-in corrections and randomness.</p>
+                            <ul class="space-y-2 text-xs text-white">
                                 <li class="flex items-start"><span class="text-yellow-400 mr-2">▸</span>Follow recorded routines</li>
                                 <li class="flex items-start"><span class="text-yellow-400 mr-2">▸</span>Auto self-correction</li>
                                 <li class="flex items-start"><span class="text-yellow-400 mr-2">▸</span>Built-in randomness</li>
@@ -862,80 +1062,76 @@
                                 <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-3 text-center">Script Mode</h3>
-                            <p class="text-gray-300 text-sm mb-4">Full script writing with commands for maximum control.</p>
-                            <ul class="space-y-2 text-xs text-gray-400">
+                            <p class="text-white text-sm mb-4">Full script writing with commands for maximum control.</p>
+                            <ul class="space-y-2 text-xs text-white">
                                 <li class="flex items-start"><span class="text-purple-400 mr-2">▸</span>Optimized farming scripts</li>
                                 <li class="flex items-start"><span class="text-purple-400 mr-2">▸</span>Complete logic control</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <div class="space-y-3 mb-8">
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </span>
-                            <span class="text-white">Optional Raspberry Pi support for inputs</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </span>
-                            <span class="text-white">Any server: KMS/GMS/SEA/N/Artale/MapleLand</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </span>
-                            <span class="text-white">Auto Rune Solver (Normal/Custom/Spinning)</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-                            </span>
-                            <span class="text-yellow-300">LD Solver add-on (+$10): Ranmelle/Haiku/Timeless/Kaizen/Bloom</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </span>
-                            <span class="text-white">Dynamic Farmer with AI-powered detection</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </span>
-                            <span class="text-white">Interactive Routine Editor</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </span>
-                            <span class="text-white">Recorder Mode (auto-correct + randomness)</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </span>
-                            <span class="text-white">Telegram remote control & monitoring</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </span>
-                            <span class="text-white">Multi-language interface support</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </span>
-                            <span class="text-white">No memory editing - completely safe</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                            </span>
-                            <span class="text-white">24/7 Discord support included</span>
+                    <div class="mb-8 flex justify-center">
+                        <div class="grid md:grid-cols-2 gap-x-8 gap-y-3 max-w-4xl">
+                            <div class="flex items-center">
+                                <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span class="text-white">Optional Raspberry Pi support for inputs</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span class="text-white">Any server: KMS/GMS/SEA/N/Artale/MapleLand</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span class="text-white">Auto Rune Solver (Normal/Custom/Spinning)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span class="text-white">Dynamic Farmer with AI-powered detection</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span class="text-white">Interactive Routine Editor</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span class="text-white">Recorder Mode (auto-correct + randomness)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span class="text-white">Telegram remote control & monitoring</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span class="text-white">Multi-language interface support</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span class="text-white">No memory editing - completely safe</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                </span>
+                                <span class="text-white">24/7 support included</span>
+                            </div>
                         </div>
                     </div>
                     
@@ -943,7 +1139,127 @@
                         <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-4 rounded-xl text-xl font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-xl">
                             Join Discord & Get Started
                         </button>
-                        <p class="text-gray-300 text-sm mt-3">$35/month • Setup service $10 (one-time) • Instant access • 24/7 support • Active community</p>
+                    </div>
+
+                    <!-- ═══ Pricing Calculator ═══ -->
+                    <div id="pricing-calculator" class="calc-wrapper mt-10 text-left">
+                        <!-- Header -->
+                        <div class="flex items-center justify-between mb-6">
+                            <h4 class="text-2xl font-extrabold text-white tracking-tight">Pricing Calculator</h4>
+                            <span class="calc-badge">No checkout &bull; estimate only</span>
+                        </div>
+
+                        <div class="grid lg:grid-cols-5 gap-6">
+                            <!-- ── Left column ── -->
+                            <div class="lg:col-span-3 space-y-5">
+
+                                <!-- Number of Users -->
+                                <div class="calc-panel">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                        <h5 class="text-white font-semibold text-lg">Number of Users</h5>
+                                    </div>
+                                    <p class="text-sm text-gray-400 mb-4">How many licenses do you need? (Each license is for 1 computer)</p>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <button id="calcUsersMinus" type="button" class="calc-stepper-btn">−</button>
+                                            <div class="text-center" style="min-width:54px;">
+                                                <p id="calcUsersLabel" class="text-4xl font-black text-white leading-none">1</p>
+                                                <p class="text-xs text-gray-500 mt-0.5">users</p>
+                                            </div>
+                                            <button id="calcUsersPlus" type="button" class="calc-stepper-btn">+</button>
+                                        </div>
+                                        <span id="calcBulkBadge" class="calc-badge">Base price</span>
+                                    </div>
+
+                                    <input id="calcUsers" type="range" min="1" max="100" value="1" class="calc-slider mt-5" style="--slider-pct:0%">
+                                    <div class="flex justify-between text-xs text-gray-500 mt-1"><span>1</span><span>100</span></div>
+
+                                    <div class="grid grid-cols-4 gap-2 mt-4">
+                                        <div id="calcTierBase" class="calc-tier-card active">
+                                            <p class="text-sm font-semibold text-white">1 user</p>
+                                            <p class="text-xs text-gray-400 mt-0.5">Base price</p>
+                                        </div>
+                                        <div id="calcTier10" class="calc-tier-card">
+                                            <p class="text-sm font-semibold text-white">2-4 users</p>
+                                            <p class="text-xs text-gray-400 mt-0.5">10% off</p>
+                                        </div>
+                                        <div id="calcTier20" class="calc-tier-card">
+                                            <p class="text-sm font-semibold text-white">5-9 users</p>
+                                            <p class="text-xs text-gray-400 mt-0.5">20% off</p>
+                                        </div>
+                                        <div id="calcTier30" class="calc-tier-card">
+                                            <p class="text-sm font-semibold text-white">10+ users</p>
+                                            <p class="text-xs text-gray-400 mt-0.5">25% off</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Plan & Add-ons -->
+                                <div class="calc-panel">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                        <h5 class="text-white font-semibold text-lg">Plan & Add-ons</h5>
+                                    </div>
+
+                                    <div class="grid grid-cols-3 gap-3 mb-4">
+                                        <button type="button" class="calc-plan-btn calc-plan-card" data-plan="five">
+                                            <p class="text-white font-bold text-sm">5 Days - $10</p>
+                                            <p class="text-xs text-gray-400 mt-1">No support</p>
+                                        </button>
+                                        <button type="button" class="calc-plan-btn calc-plan-card" data-plan="fifteen">
+                                            <p class="text-white font-bold text-sm">15 Days - $20</p>
+                                            <p class="text-xs text-gray-400 mt-1">Moderate support</p>
+                                        </button>
+                                        <button type="button" class="calc-plan-btn calc-plan-card active" data-plan="thirty">
+                                            <p class="text-white font-bold text-sm">30 Days - $35</p>
+                                            <p class="text-xs text-gray-400 mt-1">Top support</p>
+                                        </button>
+                                    </div>
+
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label id="calcSetupLabel" class="calc-addon">
+                                            <span id="calcSetupLabelText" class="text-sm text-gray-200">Setup service (+$10)</span>
+                                            <input id="calcSetup" type="checkbox">
+                                        </label>
+                                        <label class="calc-addon">
+                                            <span class="text-sm text-gray-200">LD Solver add-on (+$10)</span>
+                                            <input id="calcLd" type="checkbox">
+                                        </label>
+                                    </div>
+
+                                    <p id="calcRules" class="text-xs text-white mt-3 min-h-4"></p>
+                                </div>
+                            </div>
+
+                            <!-- ── Right column – Order Summary ── -->
+                            <div class="lg:col-span-2">
+                                <div class="calc-summary sticky top-24">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                                        <h5 class="text-white font-semibold text-lg">Order Summary</h5>
+                                    </div>
+
+                                    <div class="calc-summary-row"><span class="text-gray-400 text-sm">Users</span><span id="calcUsersCount" class="text-white font-semibold text-sm">1</span></div>
+                                    <div class="calc-summary-row"><span class="text-gray-400 text-sm">Plan</span><span id="calcPlanName" class="text-white font-semibold text-sm">30 Days - $35</span></div>
+                                    <div class="calc-summary-row"><span class="text-gray-400 text-sm">Base price (per user)</span><span id="calcBase" class="text-white text-sm">$35</span></div>
+                                    <div class="calc-summary-row"><span class="text-gray-400 text-sm">Setup service (per user)</span><span id="calcSetupPrice" class="text-white text-sm">$0</span></div>
+                                    <div class="calc-summary-row"><span class="text-gray-400 text-sm">LD Solver (per user)</span><span id="calcLdPrice" class="text-white text-sm">$0</span></div>
+
+                                    <div class="border-t border-white/10 mt-2 pt-2">
+                                        <div class="calc-summary-row"><span class="text-gray-400 text-sm">Subtotal</span><span id="calcSubtotal" class="text-white font-medium text-sm">$35</span></div>
+                                        <div class="calc-summary-row"><span class="text-gray-400 text-sm">Volume discount</span><span id="calcDiscount" class="text-green-400 font-medium text-sm">-$0 (0%)</span></div>
+                                    </div>
+
+                                    <div class="calc-total-box">
+                                        <p class="text-xs text-gray-400 uppercase tracking-wider">Total Price</p>
+                                        <p id="calcTotal" class="text-5xl font-black bg-gradient-to-r from-indigo-400 to-cyan-300 bg-clip-text text-transparent mt-1">$35</p>
+                                        <p id="calcPerUser" class="text-sm text-gray-400 mt-1">$35 per user</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1110,6 +1426,190 @@
                 }
             });
         });
+
+        const planData = {
+            five: {
+                label: '5 Days - $10',
+                price: 10,
+                setupAvailable: false,
+                setupPrice: 0,
+                rules: 'No setup service available. Cannot upgrade to 30 days.'
+            },
+            fifteen: {
+                label: '15 Days - $20',
+                price: 20,
+                setupAvailable: true,
+                setupPrice: 15,
+                rules: 'Can upgrade to 30 days within 10 days.'
+            },
+            thirty: {
+                label: '30 Days - $35',
+                price: 35,
+                setupAvailable: true,
+                setupPrice: 10,
+                rules: 'Top support plan with setup service available.'
+            }
+        };
+
+        const planButtons = document.querySelectorAll('.calc-plan-btn');
+        const setupCheckbox = document.getElementById('calcSetup');
+        const setupLabel = document.getElementById('calcSetupLabel');
+        const setupLabelText = document.getElementById('calcSetupLabelText');
+        const ldCheckbox = document.getElementById('calcLd');
+        const usersSlider = document.getElementById('calcUsers');
+        const usersMinusButton = document.getElementById('calcUsersMinus');
+        const usersPlusButton = document.getElementById('calcUsersPlus');
+        const usersLabel = document.getElementById('calcUsersLabel');
+        const bulkBadge = document.getElementById('calcBulkBadge');
+        const tierBase = document.getElementById('calcTierBase');
+        const tier10 = document.getElementById('calcTier10');
+        const tier20 = document.getElementById('calcTier20');
+        const tier30 = document.getElementById('calcTier30');
+        const calcPlanName = document.getElementById('calcPlanName');
+        const calcUsersCount = document.getElementById('calcUsersCount');
+        const calcBase = document.getElementById('calcBase');
+        const calcSetupPrice = document.getElementById('calcSetupPrice');
+        const calcLdPrice = document.getElementById('calcLdPrice');
+        const calcSubtotal = document.getElementById('calcSubtotal');
+        const calcDiscount = document.getElementById('calcDiscount');
+        const calcTotal = document.getElementById('calcTotal');
+        const calcPerUser = document.getElementById('calcPerUser');
+        const calcRules = document.getElementById('calcRules');
+
+        let selectedPlan = 'thirty';
+
+        function formatMoney(value) {
+            const rounded = Math.round(value * 100) / 100;
+            return `$${rounded.toLocaleString(undefined, {
+                minimumFractionDigits: Number.isInteger(rounded) ? 0 : 2,
+                maximumFractionDigits: 2
+            })}`;
+        }
+
+        function setActiveTier(discountRate) {
+            const allTiers = [tierBase, tier10, tier20, tier30];
+            allTiers.forEach(tier => {
+                if (tier) tier.classList.remove('active');
+            });
+
+            let activeTier = tierBase;
+            if (discountRate === 0.1) activeTier = tier10;
+            else if (discountRate === 0.2) activeTier = tier20;
+            else if (discountRate === 0.25) activeTier = tier30;
+
+            if (activeTier) activeTier.classList.add('active');
+        }
+
+        function updateSliderFill() {
+            if (!usersSlider) return;
+            const min = Number(usersSlider.min);
+            const max = Number(usersSlider.max);
+            const pct = ((Number(usersSlider.value) - min) / (max - min)) * 100;
+            usersSlider.style.setProperty('--slider-pct', pct + '%');
+        }
+
+        function updateCalculator() {
+            if (!setupCheckbox || !ldCheckbox || !calcPlanName || !usersSlider) {
+                return;
+            }
+
+            const plan = planData[selectedPlan];
+            const setupPriceValue = plan.setupPrice;
+            const ldPriceValue = 10;
+            const users = Number(usersSlider.value);
+
+            // Graduated tiered discount: each bracket only applies to users in that range
+            // 1st user: full price, users 2-4: 10% off, users 5-9: 20% off, users 10+: 25% off
+            const perUserBase = plan.price;
+            const setupCost = setupCheckbox.checked ? setupPriceValue : 0;
+            const ldCost = ldCheckbox.checked ? ldPriceValue : 0;
+            const perUserTotal = perUserBase + setupCost + ldCost;
+
+            let total = 0;
+            for (let i = 1; i <= users; i++) {
+                if (i === 1) total += perUserTotal;
+                else if (i <= 4) total += perUserTotal * 0.9;
+                else if (i <= 9) total += perUserTotal * 0.8;
+                else total += perUserTotal * 0.75;
+            }
+            total = Math.round(total * 100) / 100;
+            const subtotal = perUserTotal * users;
+            const discountAmount = Math.round((subtotal - total) * 100) / 100;
+
+            // Determine highest active tier for UI
+            let highestTier = 0;
+            if (users >= 10) highestTier = 0.25;
+            else if (users >= 5) highestTier = 0.2;
+            else if (users >= 2) highestTier = 0.1;
+
+            if (!plan.setupAvailable) {
+                setupCheckbox.checked = false;
+                setupCheckbox.disabled = true;
+                setupLabel.classList.add('disabled');
+            } else {
+                setupCheckbox.disabled = false;
+                setupLabel.classList.remove('disabled');
+                setupLabelText.textContent = `Setup service (+$${setupPriceValue})`;
+            }
+
+            planButtons.forEach(button => {
+                button.classList.toggle('active', button.dataset.plan === selectedPlan);
+            });
+
+            calcPlanName.textContent = plan.label;
+            usersLabel.textContent = String(users);
+            calcUsersCount.textContent = String(users);
+            calcBase.textContent = formatMoney(perUserBase);
+            calcSetupPrice.textContent = formatMoney(setupCost);
+            calcLdPrice.textContent = formatMoney(ldCost);
+            calcSubtotal.textContent = formatMoney(subtotal);
+            calcDiscount.textContent = `-${formatMoney(discountAmount)}`;
+            calcTotal.textContent = formatMoney(total);
+            calcPerUser.textContent = `${formatMoney(total / users)} per user`;
+            calcRules.textContent = plan.rules;
+
+            if (bulkBadge) {
+                bulkBadge.textContent = highestTier > 0 ? `Up to ${Math.round(highestTier * 100)}% off` : 'Base price';
+            }
+
+            setActiveTier(highestTier);
+            updateSliderFill();
+        }
+
+        planButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                selectedPlan = button.dataset.plan;
+                updateCalculator();
+            });
+        });
+
+        if (setupCheckbox) {
+            setupCheckbox.addEventListener('change', updateCalculator);
+        }
+
+        if (ldCheckbox) {
+            ldCheckbox.addEventListener('change', updateCalculator);
+        }
+
+        if (usersSlider) {
+            usersSlider.addEventListener('input', updateCalculator);
+        }
+
+        if (usersMinusButton && usersSlider) {
+            usersMinusButton.addEventListener('click', () => {
+                usersSlider.value = String(Math.max(Number(usersSlider.min), Number(usersSlider.value) - 1));
+                updateCalculator();
+            });
+        }
+
+        if (usersPlusButton && usersSlider) {
+            usersPlusButton.addEventListener('click', () => {
+                usersSlider.value = String(Math.min(Number(usersSlider.max), Number(usersSlider.value) + 1));
+                updateCalculator();
+            });
+        }
+
+        updateCalculator();
     </script>
 </body>
 </html>
