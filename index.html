@@ -1231,6 +1231,37 @@
 
                                     <p id="calcRules" class="text-xs text-white mt-3 min-h-4"></p>
                                 </div>
+
+                                <!-- Payment Method -->
+                                <div class="calc-panel">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                                        <h5 class="text-white font-semibold text-lg">Payment Method</h5>
+                                    </div>
+
+                                    <div class="grid grid-cols-3 gap-3">
+                                        <button type="button" class="calc-payment-btn calc-plan-card" data-payment="crypto">
+                                            <p class="text-white font-bold text-sm">Crypto</p>
+                                            <p class="text-xs text-green-400 mt-1">0% fee</p>
+                                        </button>
+                                        <button type="button" class="calc-payment-btn calc-plan-card" data-payment="rewardable">
+                                            <p class="text-white font-bold text-sm mb-2">Rewardable</p>
+                                            <div class="flex flex-wrap gap-1.5 justify-center items-center">
+                                                <img src="assets/payment/visa.PNG" alt="Visa" class="h-4 object-contain">
+                                                <img src="assets/payment/apple pay.PNG" alt="Apple Pay" class="h-4 object-contain">
+                                                <img src="assets/payment/goolge pay.PNG" alt="Google Pay" class="h-4 object-contain">
+                                                <img src="assets/payment/skrill.PNG" alt="Skrill" class="h-4 object-contain">
+                                                <img src="assets/payment/nettler.PNG" alt="Neteller" class="h-4 object-contain">
+                                                <img src="assets/payment/uniorpay.PNG" alt="UnionPay" class="h-4 object-contain">
+                                                <img src="assets/payment/ppaysafecard.PNG" alt="Paysafecard" class="h-4 object-contain">
+                                            </div>
+                                        </button>
+                                        <button type="button" class="calc-payment-btn calc-plan-card active" data-payment="paypal">
+                                            <p class="text-white font-bold text-sm">PayPal</p>
+                                            <p class="text-xs text-yellow-400 mt-1">+7% fee</p>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- ── Right column – Order Summary ── -->
@@ -1250,10 +1281,8 @@
                                     <div class="border-t border-white/10 mt-2 pt-2">
                                         <div class="calc-summary-row"><span class="text-gray-400 text-sm">Subtotal</span><span id="calcSubtotal" class="text-white font-medium text-sm">$35</span></div>
                                         <div class="calc-summary-row"><span class="text-gray-400 text-sm">Volume discount</span><span id="calcDiscount" class="text-green-400 font-medium text-sm">-$0 (0%)</span></div>
-                                    </div>
-
-                                    <div class="calc-total-box">
-                                        <p class="text-xs text-gray-400 uppercase tracking-wider">Total Price</p>
+                                        <div class="calc-summary-row"><span class="text-gray-400 text-sm">Payment fee</span><span id="calcPaymentFee" class="text-white font-medium text-sm">+$0</span></div>
+                        <div id="cardSavingsRow" class="calc-summary-row" style="display: none;"><span class="text-gray-400 text-sm">Card savings</span><span id="calcCardSavings" class="text-green-400 font-medium text-sm">-$0</span></div>
                                         <p id="calcTotal" class="text-5xl font-black bg-gradient-to-r from-indigo-400 to-cyan-300 bg-clip-text text-transparent mt-1">$35</p>
                                         <p id="calcPerUser" class="text-sm text-gray-400 mt-1">$35 per user</p>
                                     </div>
@@ -1452,6 +1481,7 @@
         };
 
         const planButtons = document.querySelectorAll('.calc-plan-btn');
+        const paymentButtons = document.querySelectorAll('.calc-payment-btn');
         const setupCheckbox = document.getElementById('calcSetup');
         const setupLabel = document.getElementById('calcSetupLabel');
         const setupLabelText = document.getElementById('calcSetupLabelText');
@@ -1472,11 +1502,13 @@
         const calcLdPrice = document.getElementById('calcLdPrice');
         const calcSubtotal = document.getElementById('calcSubtotal');
         const calcDiscount = document.getElementById('calcDiscount');
+        const calcPaymentFee = document.getElementById('calcPaymentFee');
         const calcTotal = document.getElementById('calcTotal');
         const calcPerUser = document.getElementById('calcPerUser');
         const calcRules = document.getElementById('calcRules');
 
         let selectedPlan = 'thirty';
+        let selectedPayment = 'paypal';
 
         function formatMoney(value) {
             const rounded = Math.round(value * 100) / 100;
@@ -1484,6 +1516,11 @@
                 minimumFractionDigits: Number.isInteger(rounded) ? 0 : 2,
                 maximumFractionDigits: 2
             })}`;
+        }
+
+        function roundDownToCardValue(amount) {
+            // Round down to nearest $5 increment (card denominations)
+            return Math.floor(amount / 5) * 5;
         }
 
         function setActiveTier(discountRate) {
@@ -1536,6 +1573,24 @@
             const subtotal = perUserTotal * users;
             const discountAmount = Math.round((subtotal - total) * 100) / 100;
 
+            // Calculate payment fee
+            let paymentFee = 0;
+            let finalTotal = total + paymentFee;
+            let cardSavings = 0;
+            
+            if (selectedPayment === 'paypal') {
+                paymentFee = Math.round(total * 0.07 * 100) / 100;
+                finalTotal = total + paymentFee;
+            } else if (selectedPayment === 'rewardable') {
+                paymentFee = 0; // No fee
+                const roundedTotal = roundDownToCardValue(total);
+                cardSavings = total - roundedTotal; // Calculate savings
+                finalTotal = roundedTotal; // Round down to card denomination
+            } else if (selectedPayment === 'crypto') {
+                paymentFee = 0;
+                finalTotal = total;
+            }
+
             // Determine highest active tier for UI
             let highestTier = 0;
             if (users >= 10) highestTier = 0.25;
@@ -1556,6 +1611,10 @@
                 button.classList.toggle('active', button.dataset.plan === selectedPlan);
             });
 
+            paymentButtons.forEach(button => {
+                button.classList.toggle('active', button.dataset.payment === selectedPayment);
+            });
+
             calcPlanName.textContent = plan.label;
             usersLabel.textContent = String(users);
             calcUsersCount.textContent = String(users);
@@ -1564,8 +1623,25 @@
             calcLdPrice.textContent = formatMoney(ldCost);
             calcSubtotal.textContent = formatMoney(subtotal);
             calcDiscount.textContent = `-${formatMoney(discountAmount)}`;
-            calcTotal.textContent = formatMoney(total);
-            calcPerUser.textContent = `${formatMoney(total / users)} per user`;
+            calcPaymentFee.textContent = paymentFee > 0 ? `+${formatMoney(paymentFee)}` : '$0';
+            
+            // Show/hide card savings row
+            const cardSavingsRow = document.getElementById('cardSavingsRow');
+            const calcCardSavings = document.getElementById('calcCardSavings');
+            if (selectedPayment === 'rewardable' && cardSavings > 0) {
+                cardSavingsRow.style.display = 'flex';
+                calcCardSavings.textContent = `-${formatMoney(cardSavings)}`;
+            } else {
+                cardSavingsRow.style.display = 'none';
+            }
+            
+            // Update total display with "Rewardable Card" suffix if applicable
+            if (selectedPayment === 'rewardable') {
+                calcTotal.textContent = `${formatMoney(finalTotal)} Rewardable Card`;
+            } else {
+                calcTotal.textContent = formatMoney(finalTotal);
+            }
+            calcPerUser.textContent = `${formatMoney(finalTotal / users)} per user`;
             calcRules.textContent = plan.rules;
 
             if (bulkBadge) {
@@ -1579,6 +1655,13 @@
         planButtons.forEach(button => {
             button.addEventListener('click', () => {
                 selectedPlan = button.dataset.plan;
+                updateCalculator();
+            });
+        });
+
+        paymentButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                selectedPayment = button.dataset.payment;
                 updateCalculator();
             });
         });
